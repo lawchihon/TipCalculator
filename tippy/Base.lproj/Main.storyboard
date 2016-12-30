@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zif-Eq-caw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zif-Eq-caw">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tip Calculator-->
+        <!--Title-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="tippy" customModuleProvider="target" sceneMemberID="viewController">
@@ -90,7 +90,13 @@
                             <outletCollection property="gestureRecognizers" destination="i0y-LB-7Jh" appends="YES" id="vV5-Rd-jld"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Tip Calculator" id="SH1-tJ-eQ2"/>
+                    <navigationItem key="navigationItem" title="Title" id="Cz6-7e-7I9">
+                        <barButtonItem key="rightBarButtonItem" title="Setting" id="EA8-4U-8FR">
+                            <connections>
+                                <segue destination="Ky4-Uc-d5Y" kind="show" id="PmM-dN-rXN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="billField" destination="MZE-wD-4q4" id="K67-hf-Bn6"/>
                         <outlet property="tipControl" destination="cD9-LI-nvP" id="SSX-dA-ogW"/>
@@ -101,11 +107,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="i0y-LB-7Jh">
                     <connections>
-                        <action selector="onTap:" destination="BYZ-38-t0r" id="d7x-ZL-j6T"/>
+                        <action selector="onTap:" destination="BYZ-38-t0r" id="Va9-9N-cKk"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1056.8" y="122.78860569715144"/>
+        </scene>
+        <!--Setting-->
+        <scene sceneID="HUd-hB-fB5">
+            <objects>
+                <viewController id="Ky4-Uc-d5Y" userLabel="Setting" customClass="SettingViewController" customModule="tippy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Eik-uh-vb9"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ui9-GB-nDQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0HI-H7-2gj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="THK-FX-BSC">
+                                <rect key="frame" x="16" y="145" width="343" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="18%"/>
+                                    <segment title="20%"/>
+                                    <segment title="25%"/>
+                                </segments>
+                                <connections>
+                                    <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="zvF-9p-jNS"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Default Tips" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvJ-1h-exY">
+                                <rect key="frame" x="141" y="93" width="93" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ek4-Hv-h27">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="2N3-eE-KHW">
+                            <connections>
+                                <action selector="goBack:" destination="Ky4-Uc-d5Y" id="edb-4w-mz6"/>
+                                <segue destination="5qS-1c-Sjc" kind="unwind" unwindAction="goBackWithSegue:" id="UU6-pP-eLo"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="FN2-xj-TBD">
+                            <connections>
+                                <action selector="save:" destination="Ky4-Uc-d5Y" id="fcc-B1-jja"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="defaultTipControl" destination="THK-FX-BSC" id="qNn-F7-oVd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0aw-ME-HFy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5qS-1c-Sjc" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1992" y="120"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jc4-OB-6bl">

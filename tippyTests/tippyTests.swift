@@ -2,7 +2,7 @@
 //  tippyTests.swift
 //  tippyTests
 //
-//  Created by Mandy Wong on 12/18/16.
+//  Created by John Law on 18/12/16.
 //  Copyright © 2016 John Law. All rights reserved.
 //
 

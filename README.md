@@ -4,20 +4,20 @@ TipCalculator is a tip calculator application for iOS.
 
 Submitted by: Chi Hon Law
 
-Time spent: 0.5 hours spent in total
+Time spent: 2 hours spent in total
 
 ## User Stories
 
 The following **required** functionality is complete:
 
 * [X] User can enter a bill amount, choose a tip percentage, and see the tip and total values.
-* [ ] Settings page to change the default tip percentage.
+* [X] Settings page to change the default tip percentage.
 
 The following **optional** features are implemented:
 * [ ] UI animations
 * [ ] Remembering the bill amount across app restarts (if <10mins)
-* [ ] Using locale-specific currency and currency thousands separators.
-* [ ] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
+* [X] Using locale-specific currency and currency thousands separators.
+* [X] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
 
 The following **additional** features are implemented:
 
@@ -27,11 +27,11 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/mu25wwr.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/r0HfR4A.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Notes
 
-I have no idea that the settings page is a required functionality. In prework_university.md, it is optional function. I don't know how to build it so I just leave it blank.
+It is developed under Xcode 8.2.1 for iOS 10.2. It has been tested with iPhone 7 and iPhone 7 Plus only.
 
 ## License
 
